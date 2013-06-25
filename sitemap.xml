@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://rantlab.com/blog/2013/06/25/animated-arrows-with-core-animation/</loc>
+        <loc>http://briandw.github.io/blog/2013/06/25/animated-arrows-with-core-animation/</loc>
         <lastmod>2013-06-25T09:14:18-07:00</lastmod>
     </url>
     <url>
-        <loc>http://rantlab.com/blog/archives/</loc>
+        <loc>http://briandw.github.io/blog/archives/</loc>
         <lastmod>2013-06-25T09:14:18-07:00</lastmod>
     </url>
     <url>
-        <loc>http://rantlab.com/</loc>
+        <loc>http://briandw.github.io/</loc>
         <lastmod>2013-06-25T09:14:18-07:00</lastmod>
     </url>
     <url>
-        <loc>http://rantlab.com/robots.txt</loc>
+        <loc>http://briandw.github.io/robots.txt</loc>
         <lastmod>2013-06-24T23:50:17-07:00</lastmod>
     </url>
 </urlset>

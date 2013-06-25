@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Core Animation | Rantlab]]></title>
-  <link href="http://rantlab.com/blog/categories/core-animation/atom.xml" rel="self"/>
-  <link href="http://rantlab.com/"/>
-  <updated>2013-06-25T09:14:18-07:00</updated>
-  <id>http://rantlab.com/</id>
+  <link href="http://briandw.github.io/blog/categories/core-animation/atom.xml" rel="self"/>
+  <link href="http://briandw.github.io/"/>
+  <updated>2013-06-25T09:18:13-07:00</updated>
+  <id>http://briandw.github.io/</id>
   <author>
     <name><![CDATA[Rantlab]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Animated Arrows with Core Animation]]></title>
-    <link href="http://rantlab.com/blog/2013/06/25/animated-arrows-with-core-animation/"/>
+    <link href="http://briandw.github.io/blog/2013/06/25/animated-arrows-with-core-animation/"/>
     <updated>2013-06-25T08:45:00-07:00</updated>
-    <id>http://rantlab.com/blog/2013/06/25/animated-arrows-with-core-animation</id>
+    <id>http://briandw.github.io/blog/2013/06/25/animated-arrows-with-core-animation</id>
     <content type="html"><![CDATA[<p>I&rsquo;m building a Mac OS X app needs to draw arrows. Rather than just draw some plain arrows I thought I&rsquo;d have some fun with it.</p>
 
 <p><img class="center" src="/images/blog_assets/arrows.gif" width="480" height="384" title="&lsquo;Arrows in action.&rsquo; &lsquo;An animation of the arrows doing their thing&rsquo;" ></p>
