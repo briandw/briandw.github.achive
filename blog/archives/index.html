@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Rantlab</title>
+  <title>Blog Archive - Rantlab</title>
   <meta name="author" content="Rantlab">
 
   
-  <meta name="description" content="I&rsquo;m building a Mac OS X app needs to draw arrows. Rather than just draw some plain arrows I thought I&rsquo;d have some fun with it. My first &hellip;">
+  <meta name="description" content="Blog Archive 2013 Animated Arrows with Core Animation
+Jun 25 2013 posted in Cocoa, Core Animation, Core Graphics, Objective-C Recent Posts Animated &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://rantlab.com">
+  <link rel="canonical" href="http://rantlab.com/blog/archives">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="" rel="alternate" title="Rantlab" type="application/atom+xml">
@@ -65,92 +66,40 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article role="article">
   
-  
-  
-    <article>
-      
   <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/25/animated-arrows-with-core-animation/">Animated Arrows With Core Animation</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-25T08:45:00-07:00" pubdate data-updated="true">Jun 25<span>th</span>, 2013</time>
-        
-      </p>
+    <h1 class="entry-title">Blog Archive</h1>
     
   </header>
+  
+  <div id="blog-archives">
 
 
-  <div class="entry-content"><p>I&rsquo;m building a Mac OS X app needs to draw arrows. Rather than just draw some plain arrows I thought I&rsquo;d have some fun with it.</p>
 
-<p><img class="center" src="/images/blog_assets/arrows.gif" width="480" height="384" title="Arrows in action." alt="An animation of the arrows doing their thing"></p>
+  
+  <h2>2013</h2>
 
-<p>My first design was to make the arrow &ldquo;shoot&rdquo; out and then thwang once it hits the target. Thwanging would involve making the arrow line oscillate, like a guitar string.</p>
+<article>
+  
+<h1><a href="/blog/2013/06/25/animated-arrows-with-core-animation/">Animated Arrows with Core Animation</a></h1>
+<time datetime="2013-06-25T08:45:00-07:00" pubdate><span class='month'>Jun</span> <span class='day'>25</span> <span class='year'>2013</span></time>
 
-<p>At first I though that I was going to have draw each frame in a drawRect or drawLayer. This would be a giant pain as you would have to manage a timer and ticks for the animation, sync with the screen refresh etc. Luckily I remembered about the amazing CAShapeLayer. CAShapeLayer allows you to set a path and drawing options and then animate to a new path and drawing options. This is so much easier and it&rsquo;s going to be dramatically more efficient. So lets get started.</p>
-
-<p>First thing is to make a CGPathRef with our desired arrow shape. I modified the arrow from this SO answer: <a href="http://stackoverflow.com/questions/13528898/how-can-i-draw-an-arrow-using-core-graphics">http://stackoverflow.com/questions/13528898/how-can-i-draw-an-arrow-using-core-graphics</a></p>
-
-<p>This will live in our view class RLArrowView</p>
-
-<p>This will produce a path that is arrow shaped and has a bend about halfway up. You set the amount of the bend with the wiggle param.</p>
-
-<div><script src='https://gist.github.com/5851290.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/cocoa/'>Cocoa</a>, <a class='category' href='/blog/categories/core-animation/'>Core Animation</a>, <a class='category' href='/blog/categories/core-graphics/'>Core Graphics</a>, <a class='category' href='/blog/categories/objective-c/'>Objective-C</a></span>
+</footer>
 
 
-<p>Now on mouse down create the arrow at the click point.</p>
+</article>
 
-<div><script src='https://gist.github.com/5851290.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-
-<p><a href="https://gist.github.com/briandw/5851343">https://gist.github.com/briandw/5851343</a></p>
-
-<p>Now we should have an arrow starting from the middle, pointing to the mouse and 20 pts long.</p>
-
-<p>Now the Core Animation fun begins. To make the arrow animate to the mouse point, create a new path to the mouse location and set it in an animation.</p>
-
-<div><script src='https://gist.github.com/5851365.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-
-<p>Great but what about the thwang? To make the arrow oscillate, call a new function from the completion handler to redraw the path with a bend in it. Negate and dampen the wiggle parameter and call the function again, quit when it&rsquo;s too small to matter.</p>
-
-<div><script src='https://gist.github.com/5851387.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-
-<p>Here&rsquo;s the full view class on github:
-<a href="https://gist.github.com/briandw/5851592">https://gist.github.com/briandw/5851592</a></p>
 </div>
-  
-  
 
-
-    </article>
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+</article>
+
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -167,7 +116,7 @@
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/briandw">@briandw</a> on GitHub
@@ -199,6 +148,7 @@
 
   
 </aside>
+
 
     </div>
   </div>

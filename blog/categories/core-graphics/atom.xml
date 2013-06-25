@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Core Graphics | Rantlab]]></title>
+  <link href="http://rantlab.com/blog/categories/core-graphics/atom.xml" rel="self"/>
+  <link href="http://rantlab.com/"/>
+  <updated>2013-06-25T09:14:18-07:00</updated>
+  <id>http://rantlab.com/</id>
+  <author>
+    <name><![CDATA[Rantlab]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Animated Arrows with Core Animation]]></title>
+    <link href="http://rantlab.com/blog/2013/06/25/animated-arrows-with-core-animation/"/>
+    <updated>2013-06-25T08:45:00-07:00</updated>
+    <id>http://rantlab.com/blog/2013/06/25/animated-arrows-with-core-animation</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m building a Mac OS X app needs to draw arrows. Rather than just draw some plain arrows I thought I&rsquo;d have some fun with it.</p>
+
+<p><img class="center" src="/images/blog_assets/arrows.gif" width="480" height="384" title="&lsquo;Arrows in action.&rsquo; &lsquo;An animation of the arrows doing their thing&rsquo;" ></p>
+
+<p>My first design was to make the arrow &ldquo;shoot&rdquo; out and then thwang once it hits the target. Thwanging would involve making the arrow line oscillate, like a guitar string.</p>
+
+<p>At first I though that I was going to have draw each frame in a drawRect or drawLayer. This would be a giant pain as you would have to manage a timer and ticks for the animation, sync with the screen refresh etc. Luckily I remembered about the amazing CAShapeLayer. CAShapeLayer allows you to set a path and drawing options and then animate to a new path and drawing options. This is so much easier and it&rsquo;s going to be dramatically more efficient. So lets get started.</p>
+
+<p>First thing is to make a CGPathRef with our desired arrow shape. I modified the arrow from this SO answer: <a href="http://stackoverflow.com/questions/13528898/how-can-i-draw-an-arrow-using-core-graphics">http://stackoverflow.com/questions/13528898/how-can-i-draw-an-arrow-using-core-graphics</a></p>
+
+<p>This will live in our view class RLArrowView</p>
+
+<p>This will produce a path that is arrow shaped and has a bend about halfway up. You set the amount of the bend with the wiggle param.
+<div><script src='https://gist.github.com/5851290.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<p>Now on mouse down create the arrow at the click point.</p>
+
+<p><div><script src='https://gist.github.com/5851290.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+<a href="https://gist.github.com/briandw/5851343">https://gist.github.com/briandw/5851343</a></p>
+
+<p>Now we should have an arrow starting from the middle, pointing to the mouse and 20 pts long.</p>
+
+<p>Now the Core Animation fun begins. To make the arrow animate to the mouse point, create a new path to the mouse location and set it in an animation.</p>
+
+<p><div><script src='https://gist.github.com/5851365.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<p>Great but what about the thwang? To make the arrow oscillate, call a new function from the completion handler to redraw the path with a bend in it. Negate and dampen the wiggle parameter and call the function again, quit when it&rsquo;s too small to matter.</p>
+
+<p><div><script src='https://gist.github.com/5851387.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<p>Here&rsquo;s the full view class on github:
+<a href="https://gist.github.com/briandw/5851592">https://gist.github.com/briandw/5851592</a></p>
+]]></content>
+  </entry>
+  
+</feed>
